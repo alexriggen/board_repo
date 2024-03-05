@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+<style>
+
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr; 
+
+}
+</style>
+
+
+  
+
+<div class="home-container">
+
+    <div>
+        
+        {% include 'genres_component.html' %}
+
+    </div>
+
+    <div>
+
+        <h5>{{meeting_count}} meetings available</h5>
+
+        <div>
+            {% include 'feed_component.html' %}
+        </div>
+    
+
+    </div>
+
+
+</div>
+
+{% endblock content%}
+
+    

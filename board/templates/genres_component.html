@@ -1,0 +1,13 @@
+<h3>Browse Games</h3>
+        <hr>
+
+        <div>
+            <a href="{% url 'landing_page' %}">ALL GAMES</a> <!--erases the filtering-->
+        </div>
+
+        {% for game in games %}
+            <div>
+                <a href="{% url 'landing_page' %}?q={{game.name}}">{{game.name}}</a> <!--gives the value q={topic.name} in the browser, which will be used to filter-->
+            </div>
+
+        {% endfor %}

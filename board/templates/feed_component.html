@@ -1,0 +1,13 @@
+{% for meeting in meetings %}
+            <div>
+                {% if request.user == meeting.host %}
+                <a href="">Edit</a>
+                <a href="">Delete</a> <!-- in here i used the name delete instead of the url delete-room, thats what names are for-->
+                {% endif %}
+
+                <a href="">@{{meeting.host.username}}</a> <!--passes in the users id as a pk-->
+                <a href=""><h5>{{meeting.id}} -- {{meeting.name}}</h5></a>
+                <small>{{meeting.game.name}}</small>
+                <hr>
+            </div>
+            {% endfor %}

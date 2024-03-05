@@ -1,0 +1,21 @@
+<a href="/">
+    <h1>LOGO</h1>
+</a>
+
+<form action="{% url 'landing_page' %}" method="GET">
+
+    <input type="text" name="q" placeholder="Search meetings...">
+    <input type="submit" value="submit">
+
+</form>
+
+{% if request.user.is_authenticated %} <!--checks if a user has logged in, can be used in more places :) -->
+<p>Welcome back {{request.user}}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}    
+
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+    
+
+<hr>
